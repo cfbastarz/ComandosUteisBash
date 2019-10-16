@@ -2,43 +2,6 @@
 
 Uma lista útil de comandos de uma linha no Bash.
 
-# Sumário
-
-# Operações de busca com o comando find
-## Procurar arquivos com o nome "run" na pasta atual em diante
-## Procurar arquivo com a extensão ".ksh" na pasta /etc
-## Procurar por links simbólicos na pasta atual em diante
-## Procurar por links simbólicos na pasta atual em diante, com saída formatada (indicando a origem e o destino do link)
-## Apagar todos os links simbólicos encontrados utilizando o comando xargs
-## Procurar todos os arquivos de nome "monitor.t" em pastas com nome sequencial formatado de "001" a "040", na pasta atual
-## Procurar todos os arquivos .ctl e testar se eles possuem o correspondente arquivo .idx. Caso os arquivos .idx não existam, o comando gripam é invocado para criá-los a partir do arquivo .ctl
-## Procurar por diretórios vazios
-## Procurar por arquivos vazios
-## Procurar por links quebrados
-# Operações de pesquisa em arquivos com o comando grep
-## Pesquisa recursiva pela expressão "letkf" em todos os scripts ksh na pasta atual em diante
-## Pesquisa recursiva pela exporessão "letkf" ou "LETKF" (ou uma mistura de maiúsculas/minúsculas) em todos os scripts ksh na pasta atual em diante
-# Operações com arquivos utilizando o comando awk
-## Filtrando um arquivo com colunas separadas por espaços, mostrando apenas a coluna "n"
-## Adicionando uma string antes da coluna "n"
-# Operações com arquivos utilizando o comando sed
-## Substituindo todas as ocorrências da string "A" pela string "B" em todos os scripts .ksh (apenas na pasta atual)
-## Comentando a linha "n" em um arquivo (comentário é dados por #)
-## Inserindo um comentário na primeira linha de um arquivo
-# Criando uma sequência de números no shell com o comando seq
-## Imprimir no shell a sequencia de 1 a 20
-# Operações com loops no shell
-## Imprimir a sequência de 1 a 30 utilizando o comando de laço for
-## Renomear todos os arquivos com extensão .txt adicionando uma nova extensão .dat
-## Alterar todos os arquivos com a extensão .TQ0213L042 para .T213L42, utilizando o for e o sed
-## Executar o comando cmp para todos os arquivos de uma lista
-## Aguardar até que um arquivo esteja disponível
-## Verifica se uma pasta existe; se não existir, cria, se existir sai do teste
-## Lê um lista chamada "lista" com os nomes das pastas que contém um script de submissão, dá permissão de execução e executa
-## Faz um loop em cima de datas; verifica se a primeira data é menor ou igual do que a segunda. Quando esta condição é alcançada, sai do loop
-# Comandos para visualização da quota do usuário
-## Verifica o espaço em disco ocupado (em Gigabytes) pelo usuário no disco scratchin
-
 ## Operações de busca com o comando find
 
 ```bash
@@ -89,7 +52,7 @@ $ find . -type l | xargs rm -rf
 $ for pasta in $(seq -f "%03g" 1 40); do echo $pasta; cd $pasta; if test ! -e monitor.t; then echo ">>> $pasta falhou"; fi; cd -; done
 ```
 
-### Procurar todos os arquivos .ctl e testar se eles possuem o correspondente arquivo .idx. Caso os arquivos .idx não existam, o comando gripam é invocado para criá-los a partir do arquivo .ctl
+### Procurar todos os arquivos .ctl e testar se eles possuem o correspondente arquivo .idx. Caso os arquivos .idx não existam, o comando gribmap é invocado para criá-los a partir do arquivo .ctl
 
 
 ```bash
