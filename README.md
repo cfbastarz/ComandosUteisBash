@@ -2,7 +2,7 @@
 
 Uma lista útil de comandos de uma linha no Bash.
 
-## 1. Operações de busca com o comando find
+## 1. Operações de busca com o comando `find`
 
 ```bash
 $ find <diretorio> -name "<expressao>"
@@ -34,7 +34,7 @@ $ find . type -l
 $ find . -type l -printf "%p -> %l\n"
 ```
 
-### 1.5 Apagar todos os links simbólicos encontrados utilizando o comando xargs
+### 1.5 Apagar todos os links simbólicos encontrados utilizando o comando xargs`
 
 ```bash
 $ find . -type l | xargs rm -rf
@@ -78,7 +78,19 @@ $ find . -type f -empty -name "NOME"
 $ find . -xtype l
 ```
 
-## 2. Operações de pesquisa em arquivos com o comando grep
+### 1.11 Procurar arquivos apenas no diretório corrente
+
+```bash
+$ find . -maxdepth 1 -type f 
+```
+
+### 1.12 Procurar arquivos até o diretório de segundo nível
+
+```bash
+$ find . -maxdepth 2 -type f 
+```
+
+## 2. Operações de pesquisa em arquivos com o comando grep`
 
 ```bash
 $ grep <opcoes> <expressao> <arquivo(s)>
@@ -184,13 +196,11 @@ $ echo $(seq 1 20)
 
 ### 6.1 Imprimir a sequência de 1 a 30 utilizando o comando de laço `for`
 
-
 ```bash
 $ for i in $(seq 1 30); do echo $i; done
 ```
 
 ### 6.2 Renomear todos os arquivos com extensão .txt adicionando uma nova extensão .dat
-
 
 ```bash
 $ for i in `find . -name *.txt`; do mv ${i} ${i}.dat; done
