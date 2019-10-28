@@ -34,7 +34,7 @@ $ find . type -l
 $ find . -type l -printf "%p -> %l\n"
 ```
 
-### 1.5 Apagar todos os links simbólicos encontrados utilizando o comando xargs`
+### 1.5 Apagar todos os links simbólicos encontrados utilizando o comando `xargs`
 
 ```bash
 $ find . -type l | xargs rm -rf
@@ -90,7 +90,7 @@ $ find . -maxdepth 1 -type f
 $ find . -maxdepth 2 -type f 
 ```
 
-## 2. Operações de pesquisa em arquivos com o comando grep`
+## 2. Operações de pesquisa em arquivos com o comando `grep`
 
 ```bash
 $ grep <opcoes> <expressao> <arquivo(s)>
